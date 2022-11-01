@@ -22,14 +22,19 @@ feet_hi = T_height - W_height;
 
 wheel_d = 80;
 
-translate([-T_lenght/2, -T_widith/2, 0]) rotate([0,0,  0]) feet(feet_hi);
-translate([ T_lenght/2, -T_widith/2, 0]) rotate([0,0, 90]) feet(feet_hi);
-translate([ T_lenght/2,  T_widith/2, 0]) rotate([0,0,180]) feet(feet_hi);
-translate([-T_lenght/2,  T_widith/2, 0]) rotate([0,0,270]) feet(feet_hi);
+BROR();
 
-translate([          0,           0, 880      ]) top_shelf();
-translate([          0,           0, hi_shelf1]) shelf();
-translate([          0,           0, hi_shelf2]) shelf();
+
+module BROR() {
+    translate([-T_lenght/2, -T_widith/2, 0]) rotate([0,0,  0]) feet(feet_hi);
+    translate([ T_lenght/2, -T_widith/2, 0]) rotate([0,0, 90]) feet(feet_hi);
+    translate([ T_lenght/2,  T_widith/2, 0]) rotate([0,0,180]) feet(feet_hi);
+    translate([-T_lenght/2,  T_widith/2, 0]) rotate([0,0,270]) feet(feet_hi);
+
+    translate([          0,           0, 880      ]) top_shelf();
+    translate([          0,           0, hi_shelf1]) shelf();
+    translate([          0,           0, hi_shelf2]) shelf();
+}
 
 module feet(hi) {
     color([0.3,0.3,0.35,1]) translate([0, 0, W_height]) {
@@ -43,11 +48,11 @@ module feet(hi) {
     color([0.1,0.1,0.1,1]) translate([feet_le/2+20,feet_wi/2, wheel_d/2]) BROR_Wheel();
 }
 
-module top_shelf() {
+module top_shelf() color([0.5,0.4,0.3,1]) {
     rcube([T_lenght, T_widith, 20], 5);
 }
 
-module shelf() color([0.35,0.35,0.35,1]) translate([0,0,shelf_thk/2]){
+module shelf() color([0.32,0.32,0.35,1]) translate([0,0,shelf_thk/2]){
     difference() {
         rcube([T_lenght-feet_th*2, T_widith-feet_th*2, shelf_thk          ], 2);
          cube([T_lenght-feet_th*4, T_widith-feet_th*4, shelf_thk-feet_th*2], center=true);

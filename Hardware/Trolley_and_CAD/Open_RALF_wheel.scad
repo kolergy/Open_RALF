@@ -24,7 +24,7 @@ module axis() color([0.6,0.6,0.65,1]) {
 }
 
 
-module wheel() rotate([0,-90,0]){
+module wheel() translate([0, 0,0]) rotate([90,0,0]){
     h1= 4.3;
     h2=46.0;
     h3=12.0;

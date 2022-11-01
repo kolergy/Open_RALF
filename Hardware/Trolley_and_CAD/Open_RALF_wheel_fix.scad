@@ -1,11 +1,8 @@
-
-// Aifred - FabLab Open Source Autonomous Troley
 q      =  5;
 
 
 
 use <Open_RALF_utils.scad>
-use <Open_RALF_wheel.scad>
 
 play    =  0.3;
 
@@ -16,9 +13,8 @@ axis_le = 52.0;
 feet_le = 40.0;
 feet_wi = 40.0;
 
+
 ax_fix();
-
-
 
 module ax_fix() color([0.99,0.7,0.1,1]){
     translate([ (axis_le+5)/2, feet_wi/2,-axis_di*1.25]) difference() {
@@ -33,5 +29,3 @@ module ax_fix() color([0.99,0.7,0.1,1]){
         translate([-(axis_le+5)/2+feet_le/2,0,6]) cylinder(d=12, h=6,$fn=6);
     }
 }
-
-
