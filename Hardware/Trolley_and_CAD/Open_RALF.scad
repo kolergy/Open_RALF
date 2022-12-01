@@ -5,12 +5,18 @@ q      =  5;
 
 
 use <Open_RALF_utils.scad>
-use <Open_RALF_wheel.scad>
 use <Open_RALF_BROR.scad>
+use <Open_RALF_wheel.scad>
+use <Open_RALF_wheel_fix.scad>
 
 
 BROR();
-translate([0,-210,175/2]) rotate([0, 90+plate_an,  0]) wheel();
+
+
+translate([0,-210,175/2]) rotate([0, 90+plate_an,  0]) {
+    wheel();
+    ax_fix();
+}
 translate([0, 210,175/2]) rotate([0, 90-plate_an,180]) wheel();
 ry_plate();
 
