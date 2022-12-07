@@ -1,6 +1,6 @@
 
 // Aifred - FabLab Open Source Autonomous Troley
-q      =  5;
+q      =  10;
 
 
 
@@ -10,17 +10,17 @@ use <Open_RALF_wheel.scad>
 use <Open_RALF_wheel_fix.scad>
 
 
-BROR();
+//BROR();
 
-translate([0,-210,175/2]) rotate([0, 90+plate_an,  0]) {
-    wheel();
+//translate([0,-210,175/2]) rotate([0, 90+plate_an,  0]) {
+//    wheel();
+//    ax_fix();
+//}
+//translate([0, 210,175/2]) rotate([0, 90-plate_an,180]) {
+//    wheel();
     ax_fix();
-}
-translate([0, 210,175/2]) rotate([0, 90-plate_an,180]) {
-    wheel();
-    ax_fix();
-}
-ry_plate();
+//}
+//ry_plate();
 
 plate_th =  10;
 plate_wi = 412;
